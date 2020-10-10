@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Expense Manager
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div id="container">
+           <div id="toggle">
+                <div id="login">
+                    Login
+                </div>
+                <div id="register">
+                    Register
+                </div>
+            </div>
+            <div class="formContainer">
+                <div id="login-form">
+                    <form id="logForm">
+                        <label for="l-email">Email</label>
+                        <input type="text" id="l-email" name="l-email" required>
+                        <label for="l-password">Password</label>
+                        <input type="text" id="l-password" name="l-password" required>
+                        <input type="submit" value="Login">
+                    </form>
+                    <p id="accDExist">Account doesn't exists</p>
+                    <p id="wp">Wrong Password</p>
+                </div>
+                <div id="register-form">
+                    <form id="regForm">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="r-email">Email</label>
+                        <input type="text" id="r-email" name="r-email" required>
+                        <label for="r-password">Password</label>
+                        <input type="text" id="r-password" name="r-password" required>
+                        <input type="submit" value="Register">
+                    </form>
+                    <p id="accExist">Account already exists</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
