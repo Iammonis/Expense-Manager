@@ -62,6 +62,8 @@ html, body, #main{
     padding: 20px;
     background: var(--active);
     cursor: default;
+    font-weight: 900;
+    color: #000;
 }
 #register{
     width: 50%;
@@ -69,6 +71,12 @@ html, body, #main{
     padding: 20px;
     cursor: pointer;
     background: var(--not-active);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+input{
+    margin: 5px 0 20px 0;
 }
 
 #logForm, #regForm{
