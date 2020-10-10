@@ -42,8 +42,6 @@ function register(){
     var name=form.get("name");
     var email=form.get("r-email");
     var password=form.get("r-password");
-    console.log(name);
-    console.log(email);
         var data={name:name,email:email,password:password};
         data=JSON.stringify(data);
         localStorage.setItem(email,data);
