@@ -46,6 +46,7 @@ html, body, #main{
 .formContainer{
     display: flex;
     flex-direction: column;
+    
 }
 
 #register-form{
@@ -64,6 +65,7 @@ html, body, #main{
     cursor: default;
     font-weight: 900;
     color: #000;
+    transition: .5s;
 }
 #register{
     width: 50%;
@@ -72,6 +74,7 @@ html, body, #main{
     cursor: pointer;
     background: var(--not-active);
     font-weight: 900;
+    transition: .5s;
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -95,15 +98,19 @@ input{
 }
 
 #name, #l-email, #l-username, #l-password, #r-email, #r-username, #r-password{
-    border-bottom: 1px solid var(--blue);
+    border-bottom: 2px solid #d9d9d9;
 }
 
+#name:focus, #l-email:focus, #l-username:focus, #l-password:focus, #r-email:focus, #r-username:focus, #r-password:focus{
+    border-bottom: 2px solid var(--blue);
+}
 
 #logForm, #regForm{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 #logForm{
