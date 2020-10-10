@@ -81,6 +81,9 @@ html, body, #main{
 #logForm{
     margin-top: 100px;
 }
+#regForm{
+    margin-top: 100px;
+}
 
 #logForm input, #regForm input{
     width: 50%;
