@@ -17,13 +17,13 @@ function login(){
     var password=form.get("l-password");
     var p=document.createElement("p");
     var body=document.createElement("body");
-    
+
     if(localStorage[email]){
       location.assign("dash.html");
     }
     else{
-        p.textContent=`${email}Account doesnt exist`
-        body.append(p);
+      alert(`${email}Account doesnt exist`);
+        
     }
 }
 function register(){
