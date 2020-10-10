@@ -48,18 +48,33 @@ function register(){
 }
 
 function reg(){
-var regdiv=document.getElementById("register-form");
-var logdiv=document.getElementById("login-form");
-logdiv.style.display="none";
-regdiv.style.display="block";
-logdiv.style.cursor="pointer";
-regdiv.style.cursor="default";
+var regDiv=document.getElementById("register-form");
+var logDiv=document.getElementById("login-form");
+var regBtn=document.getElementById("register");
+var logBtn=document.getElementById("login");
+
+logDiv.style.display="none";
+regDiv.style.display="block";
+logBtn.style.cursor="pointer";
+regBtn.style.cursor="default";
+regBtn.style.background="var(--active)";
+logBtn.style.background="var(--not-active)";
+regBtn.style.color="#000";
+logBtn.style.color="rgba(0, 0, 0, 0.5)";
+
 }
 function log(){
-var regdiv=document.getElementById("register-form");
-var logdiv=document.getElementById("login-form");
-logdiv.style.display="block";
-regdiv.style.display="none";
-logdiv.style.cursor="default";
-regdiv.style.cursor="pointer";
+var regDiv=document.getElementById("register-form");
+var logDiv=document.getElementById("login-form");
+var regBtn=document.getElementById("register");
+var logBtn=document.getElementById("login");
+
+logDiv.style.display="block";
+regDiv.style.display="none";
+logBtn.style.cursor="default";
+regBtn.style.cursor="pointer";
+logBtn.style.background="var(--active)";
+regBtn.style.background="var(--not-active)";
+logBtn.style.color="#000";
+regBtn.style.color="rgba(0, 0, 0, 0.5)";
 }
