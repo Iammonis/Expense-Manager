@@ -42,9 +42,17 @@ function register(){
     var name=form.get("name");
     var email=form.get("r-email");
     var password=form.get("r-password");
-        var data={name:name,email:email,password:password};
+    var transaction=
+    [
+          {title: "Salary", type: "credit", amount: 10000, timestamp: Date()},
+          {title: "Rent", type: "debit", amount: 5000, timestamp:Date()}
+        ]
+    ;
+        var data={name:name,email:email,password:password,transaction:transaction};
+        console.log(data[transaction]);
         data=JSON.stringify(data);
         localStorage.setItem(email,data);
+       
 }
 
 function reg(){
