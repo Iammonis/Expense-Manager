@@ -1,15 +1,15 @@
 window.addEventListener("load",function(){
-    var login=document.getElementById("login");
-    var register=document.getElementById("register");
+    let login=document.getElementById("login");
+    let register=document.getElementById("register");
+    let logform=document.getElementById("logForm");
+    let regform=document.getElementById("regForm");
     login.addEventListener("click",log);
     register.addEventListener("click",reg);
-    var logform=document.getElementById("logForm");
-    logform.addEventListener("submit",login);
-    var regform=document.getElementById("regForm");
-    regform.addEventListener("submit",register);
+    logform.addEventListener("submit",login1);
+    regform.addEventListener("submit",register1);
 });
 
-function login(){
+function login1(){
     event.preventDefault();
     var form=new FormData(event.target);
     var email=form.get("l-email");
@@ -17,27 +17,25 @@ function login(){
     var p=document.createElement("p");
     var body=document.createElement("body");
     
-    if(localStorage.email){
-      location.assign(dash.html);
+    if(localStorage[email]){
+      location.assign("dash.html");
     }
     else{
         p.textContent=`${email}Account doesnt exist`
         body.append(p);
     }
 }
-function register(){
+function register1(){
     event.preventDefault();
     var form=new FormData(event.target);
     var name=form.get("name");
     var email=form.get("r-email");
     var password=form.get("r-password");
-    var p=document.createElement("p");
-    var body=document.createElement("body");
     console.log(name);
     console.log(email);
         var data={name:name,email:email,password:password};
         data=JSON.stringify(data);
-        localStorage(email,data);
+        localStorage.setItem(email,data);
 }
 function reg(){
 var regdiv=document.getElementById("register-form");
