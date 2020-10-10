@@ -22,11 +22,11 @@
             <div class="formContainer">
                 <div id="login-form">
                     <form id="logForm">
-                        <label for="l-email">Email</label>
-                        <input type="email" id="l-email" name="l-email" required>
-                        <label for="l-password">Password</label>
-                        <input type="password" id="l-password" name="l-password" required>
-                        <input type="submit" value="Login">
+                        <!-- <label for="l-email">Email</label> -->
+                        <input type="email" id="l-email" name="l-email" required placeholder="Email">
+                        <!-- <label for="l-password">Password</label> -->
+                        <input type="password" id="l-password" name="l-password" required placeholder="Password"> 
+                        <input id="loginBtn" type="submit" value="Login">
                         <p id="accDExist">Account doesn't exists</p>
                         <p id="wp">Wrong Password</p>
                     </form>
@@ -34,13 +34,13 @@
                 </div>
                 <div id="register-form">
                     <form id="regForm">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required minlength="4">
-                        <label for="r-email">Email</label>
-                        <input type="email" id="r-email" name="r-email" required>
-                        <label for="r-password">Password</label>
-                        <input type="password" id="r-password" name="r-password" required minlength="6">
-                        <input type="submit" value="Register">
+                        <!-- <label for="name">Name</label> -->
+                        <input type="text" id="name" name="name" required minlength="4" placeholder="Name">
+                        <!-- <label for="r-email">Email</label> -->
+                        <input type="email" id="r-email" name="r-email" required placeholder="Email">
+                        <!-- <label for="r-password">Password</label> -->
+                        <input type="password" id="r-password" name="r-password" required minlength="6" placeholder="Password">
+                        <input id="registerBtn" type="submit" value="Register">
                         
                     </form>
                     <p id="accExist">Account already exists</p>

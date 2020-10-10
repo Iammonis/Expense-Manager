@@ -75,9 +75,29 @@ html, body, #main{
     color: rgba(0, 0, 0, 0.5);
 }
 
+label{
+    font-weight: 500;
+    font-size: 18px;
+}
+
 input{
     margin: 5px 0 20px 0;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    height: 50px;
+    width: 10%;
 }
+
+#registerBtn, #loginBtn{
+    background: var(--pink);
+    color: #fff;
+}
+
+#name, #l-email, #l-username, #l-password, #r-email, #r-username, #r-password{
+    border-bottom: 1px solid var(--blue);
+}
+
 
 #logForm, #regForm{
     display: flex;
