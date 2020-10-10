@@ -88,12 +88,17 @@ html, body, #main{
 
 #accDExist{
     display: none;
+    color: rgba(255, 98, 98, 0.856);
 }
 
 #wp{
     display: none;
+    color: rgba(255, 98, 98, 0.856);
+
 }
 
 #accExist{
     display: none;
+    color: rgba(255, 98, 98, 0.856);
+
 }
