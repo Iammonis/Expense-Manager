@@ -1,11 +1,12 @@
 window.addEventListener("load",function(){
-    var login=document.getElementById("login");
-    var register=document.getElementById("register");
-    login.addEventListener("click",log);
-    register.addEventListener("click",reg);
-    var logform=document.getElementById("logForm");
+    let loginV=document.getElementById("login");
+    let registerV=document.getElementById("register");
+    let logform=document.getElementById("logForm");
+    let regform=document.getElementById("regForm");
+
+    loginV.addEventListener("click",log);
+    registerV.addEventListener("click",reg);
     logform.addEventListener("submit",login);
-    var regform=document.getElementById("regForm");
     regform.addEventListener("submit",register);
 });
 
@@ -37,17 +38,22 @@ function register(){
     console.log(email);
         var data={name:name,email:email,password:password};
         data=JSON.stringify(data);
-        localStorage(email,data);
+        localStorage.setItem(email,data);
 }
+
 function reg(){
 var regdiv=document.getElementById("register-form");
 var logdiv=document.getElementById("login-form");
 logdiv.style.display="none";
 regdiv.style.display="block";
+logdiv.style.cursor="pointer";
+regdiv.style.cursor="default";
 }
 function log(){
 var regdiv=document.getElementById("register-form");
 var logdiv=document.getElementById("login-form");
 logdiv.style.display="block";
 regdiv.style.display="none";
+logdiv.style.cursor="default";
+regdiv.style.cursor="pointer";
 }
