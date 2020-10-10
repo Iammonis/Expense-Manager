@@ -17,8 +17,10 @@ function login(){
     var password=form.get("l-password");
     var p=document.createElement("p");
     var body=document.createElement("body");
-    
-    if(localStorage[email]){
+    let getData  = localStorage.getItem(email);
+    getData = JSON.parse(getData)
+
+    if(localStorage[email] && password == getData.password){
       location.assign("dash.html");
     }
     else{
