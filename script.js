@@ -15,14 +15,25 @@ function login(){
     var form=new FormData(event.target);
     var email=form.get("l-email");
     var password=form.get("l-password");
-    var p=document.createElement("p");
+    var acde=document.getElementById("accDExist");
+    var wp=document.getElementById("wp");
+    let getData  = localStorage.getItem(email);
+    getData = JSON.parse(getData)
 
-    if(localStorage[email]){
+    if(localStorage[email] && password == getData.password){
       location.assign("dash.html");
     }
-    else{
-      p.textContent=`${email}Account doesnt exist`;
-        form.append(p);
+    else if(!localStorage[email]){
+      acde.style.display="block";
+     setTimeout(function(){
+      acde.style.display="none";
+     },5000);
+    }
+    else if( password != getData.password ){
+      wp.style.display="block";
+     setTimeout(function(){
+      wp.style.display="none";
+     },5000);
     }
 }
 function register(){
