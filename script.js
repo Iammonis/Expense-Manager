@@ -45,7 +45,7 @@ function register(){
  
         var data={name:name,email:email,password:password};
         data=JSON.stringify(data);
-        localStorage.setItem(email,data);
+        localStorage.setItem(user,data);
        
 }
 
