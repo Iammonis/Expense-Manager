@@ -16,14 +16,13 @@ function login(){
     var email=form.get("l-email");
     var password=form.get("l-password");
     var p=document.createElement("p");
-    var body=document.createElement("body");
 
     if(localStorage[email]){
       location.assign("dash.html");
     }
     else{
-      alert(`${email}Account doesnt exist`);
-        
+      p.textContent=`${email}Account doesnt exist`;
+        form.append(p);
     }
 }
 function register(){
