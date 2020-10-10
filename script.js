@@ -18,8 +18,8 @@ function login(){
     var p=document.createElement("p");
     var body=document.createElement("body");
     
-    if(localStorage.email){
-      location.assign(dash.html);
+    if(localStorage[email]){
+      location.assign("dash.html");
     }
     else{
         p.textContent=`${email}Account doesnt exist`
@@ -32,8 +32,6 @@ function register(){
     var name=form.get("name");
     var email=form.get("r-email");
     var password=form.get("r-password");
-    var p=document.createElement("p");
-    var body=document.createElement("body");
     console.log(name);
     console.log(email);
         var data={name:name,email:email,password:password};
