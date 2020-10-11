@@ -44,8 +44,21 @@ function register(){
     var password=form.get("r-password");
  
         var data={name:name,email:email,password:password};
-        data=JSON.stringify(data);
-        localStorage.setItem(user,data);
+        
+        if(localStorage.user){
+          var obj=localStorage.getItem("user");
+          obj=JSON.parse(obj);
+          obj.push(data);
+          localStorage.setItem("user",JSON.stringify(obj));
+        }
+        else{
+          localStorage.setItem("user","[]");
+          var obj=localStorage.getItem("user");
+          obj=JSON.parse(obj);
+          obj.push(data);
+          localStorage.setItem("user",JSON.stringify(obj));
+        }
+        
        
 }
 
