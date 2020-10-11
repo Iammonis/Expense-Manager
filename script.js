@@ -8,8 +8,11 @@ window.addEventListener("load",function(){
     registerV.addEventListener("click",reg);
     logform.addEventListener("submit",login);
     regform.addEventListener("submit",register);
+    
 });
-
+var p=document.createElement("p"); 
+    var form=document.getElementById("register-form");
+    form.append(p);
 function login(){
     event.preventDefault();
     var form=new FormData(event.target);
@@ -18,23 +21,7 @@ function login(){
     var acde=document.getElementById("accDExist");
     var wp=document.getElementById("wp");
     let getData  = localStorage.getItem("users");
-    getData = JSON.parse(getData)
-    // console.log(getData[0].password)
-    // if(localStorage[email] && password == getData.password){
-    //   location.assign("dash.html");
-    // }
-    // else if(!localStorage[email]){
-    //   acde.style.display="block";
-    //  setTimeout(function(){
-    //   acde.style.display="none";
-    //  },5000);
-    // }
-    // else if( password != getData.password ){
-    //   wp.style.display="block";
-    //  setTimeout(function(){
-    //   wp.style.display="none";
-    //  },5000);
-    // }
+    getData = JSON.parse(getData);
     let count=0;
     for(let i=0; i<getData.length; i++){
       if(getData[i].email == email)
@@ -70,12 +57,25 @@ function register(){
     var password=form.get("r-password");
  
         var data={name:name,email:email,password:password};
-        
+       
         if(localStorage.user){
           var obj=localStorage.getItem("user");
           obj=JSON.parse(obj);
-          obj.push(data);
-          localStorage.setItem("user",JSON.stringify(obj));
+          for(i=0;i<obj.length;i++){
+            if(obj[i].email==data.email){
+              
+             
+              p.textContent="User Already Exist!";
+             
+             
+            }
+           else{
+            obj.push(data);
+            localStorage.setItem("user",JSON.stringify(obj));
+           }
+          }
+         
+         
         }
         else{
           localStorage.setItem("user","[]");
