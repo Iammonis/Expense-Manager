@@ -17,24 +17,50 @@ function login(){
     var password=form.get("l-password");
     var acde=document.getElementById("accDExist");
     var wp=document.getElementById("wp");
-    let getData  = localStorage.getItem(email);
+    let getData  = localStorage.getItem("users");
     getData = JSON.parse(getData)
-
-    if(localStorage[email] && password == getData.password){
-      location.assign("dash.html");
+    // console.log(getData[0].password)
+    // if(localStorage[email] && password == getData.password){
+    //   location.assign("dash.html");
+    // }
+    // else if(!localStorage[email]){
+    //   acde.style.display="block";
+    //  setTimeout(function(){
+    //   acde.style.display="none";
+    //  },5000);
+    // }
+    // else if( password != getData.password ){
+    //   wp.style.display="block";
+    //  setTimeout(function(){
+    //   wp.style.display="none";
+    //  },5000);
+    // }
+    let count=0;
+    for(let i=0; i<getData.length; i++){
+      if(getData[i].email == email)
+      {
+        if(password == getData[i].password)
+        {
+          location.assign("dash.html");
+        }
+        else{
+          wp.style.display="block";
+           setTimeout(function(){
+            wp.style.display="none";
+           },5000);
+        }
+      }
+      else{
+        count++;
+      }
     }
-    else if(!localStorage[email]){
+    if(getData.length == count){
       acde.style.display="block";
-     setTimeout(function(){
-      acde.style.display="none";
-     },5000);
+      setTimeout(function(){
+        acde.style.display="none";
+      },5000);
     }
-    else if( password != getData.password ){
-      wp.style.display="block";
-     setTimeout(function(){
-      wp.style.display="none";
-     },5000);
-    }
+
 }
 function register(){
     event.preventDefault();
