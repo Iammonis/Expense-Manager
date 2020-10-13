@@ -10,9 +10,7 @@ window.addEventListener("load",function(){
     regform.addEventListener("submit",register);
     
 });
-var p=document.createElement("p"); 
-    var form=document.getElementById("register-form");
-    form.append(p);
+
 function login(){
     event.preventDefault();
     var form=new FormData(event.target);
