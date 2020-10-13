@@ -57,17 +57,17 @@ function register(){
     var password=form.get("r-password");
  
         var data={name:name,email:email,password:password};
+        var para = document.querySelector("#accExist")
        
         if(localStorage.user){
           var obj=localStorage.getItem("user");
           obj=JSON.parse(obj);
           for(i=0;i<obj.length;i++){
             if(obj[i].email==data.email){
-              
-             
-              p.textContent="User Already Exist!";
-             
-             
+              para.style.display = "block"
+              setTimeout(function(){
+                para.style.display="none";
+              },5000);
             }
            else{
             obj.push(data);
