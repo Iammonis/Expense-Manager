@@ -18,7 +18,7 @@ function login(){
     var password=form.get("l-password");
     var acde=document.getElementById("accDExist");
     var wp=document.getElementById("wp");
-    let getData  = localStorage.getItem("users");
+    let getData  = localStorage.getItem("user");
     getData = JSON.parse(getData);
     let count=0;
     for(let i=0; i<getData.length; i++){
@@ -26,7 +26,7 @@ function login(){
       {
         if(password == getData[i].password)
         {
-          location.assign("dash.html");
+          location.assign("dashboard.html");
         }
         else{
           wp.style.display="block";
@@ -48,45 +48,58 @@ function login(){
 
 }
 function register(){
-    event.preventDefault();
-    var form=new FormData(event.target);
-    var name=form.get("name");
-    var email=form.get("r-email");
-    var password=form.get("r-password");
- 
-        var data={name:name,email:email,password:password};
-        var para = document.querySelector("#accExist")
-       
-        if(localStorage.user){
-          var obj=localStorage.getItem("user");
-          obj=JSON.parse(obj);
-          for(i=0;i<obj.length;i++){
-            if(obj[i].email==data.email){
-              para.style.display = "block"
-              setTimeout(function(){
-                para.style.display="none";
-              },5000);
-            }
-           else{
-            obj.push(data);
-            localStorage.setItem("user",JSON.stringify(obj));
-           }
-          }
-         
-         
-        }
-        else{
-          localStorage.setItem("user","[]");
-          var obj=localStorage.getItem("user");
-          obj=JSON.parse(obj);
-          obj.push(data);
-          localStorage.setItem("user",JSON.stringify(obj));
-        }
-        
-       
+  
+  event.preventDefault();
+  var form=new FormData(event.target);
+  var name=form.get("name");
+  var email=form.get("r-email");
+  var password=form.get("r-password");
+
+  var data={name:name,email:email,password:password};
+  var para = document.querySelector("#accExist")
+
+  if(localStorage.user){
+
+    var obj=localStorage.getItem("user");
+    obj=JSON.parse(obj);
+    let bool = true;
+
+    for(i=0;i<obj.length;i++){
+
+      if(obj[i].email==data.email){
+
+        para.style.display = "block"
+        setTimeout(function(){
+          para.style.display="none";
+        },5000);
+        bool = false;
+        break;
+
+      }
+    }
+    if(bool){
+
+      obj.push(data);
+      localStorage.setItem("user",JSON.stringify(obj));
+      log()
+
+    }
+  }
+
+  else{
+
+    localStorage.setItem("user","[]");
+    var obj=localStorage.getItem("user");
+    obj=JSON.parse(obj);
+    obj.push(data);
+    localStorage.setItem("user",JSON.stringify(obj));
+    log()
+
+  }
 }
 
 function reg(){
+
 var regDiv=document.getElementById("register-form");
 var logDiv=document.getElementById("login-form");
 var regBtn=document.getElementById("register");
@@ -103,6 +116,7 @@ logBtn.style.color="rgba(0, 0, 0, 0.5)";
 
 }
 function log(){
+
 var regDiv=document.getElementById("register-form");
 var logDiv=document.getElementById("login-form");
 var regBtn=document.getElementById("register");
@@ -116,4 +130,5 @@ logBtn.style.background="var(--active)";
 regBtn.style.background="var(--not-active)";
 logBtn.style.color="#000";
 regBtn.style.color="rgba(0, 0, 0, 0.5)";
+
 }
