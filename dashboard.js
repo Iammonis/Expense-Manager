@@ -18,6 +18,14 @@ cred.addEventListener('click',creditLedge)
 debt.addEventListener('click',debitLedge)
 
 var username=document.getElementById("user-name");
+
+var cred = document.getElementById("credit-btn")
+var debt = document.getElementById("debit-btn")
+
+
+cred.addEventListener('click',creditLedge)
+debt.addEventListener('click',debitLedge)
+
 var len=JSON.parse(localStorage.user);
 var income=0;
 var expense=0;
@@ -154,4 +162,14 @@ function gettransaction(){
     }
     var modal=document.getElementById("modal");
     modal.style.display="none";
+}
+
+function creditLedge(){
+    for(let i=0; i<len.length;i++){
+        if()
+    }
+}
+
+function debitLedge(){
+
 }

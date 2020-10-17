@@ -294,6 +294,7 @@ input[type="submit"] {
 }
 
 #modal-content2 table {
+  margin-bottom: 20px;
   width: 100%;
   border: none;
   border-collapse: collapse;
