@@ -150,7 +150,7 @@ table{
 
 table td{
     width: 25%;
-    height: 60px;
+    height: 50px;
 }
 
 thead{
@@ -208,7 +208,7 @@ form input[type="text"], input[type="submit"]{
 
 input[type="text"]{
     border-bottom: 1px solid var(--blue);
-    
+
 }
 
 label{
