@@ -8,19 +8,41 @@ var add=document.getElementById("add-trans");
 add.addEventListener("click",transinput);
 
 var len=JSON.parse(localStorage.user);
-// var income=0;
-// for(var a=0;a<len.length;a++){
+var income=0;
+var expense=0;
+for(var a=0;a<len.length;a++){
    
-//     if(len[a].email==localStorage.active){
+    if(len[a].email==localStorage.active){
       
 
-//         for(var b=0;b<len[a].length;b++){
-//             console.log(len[a].transaction[b].type);
-//         }
+        for(var b=0;b<len[a].transaction.length;b++){
+            if(len[a].transaction[b].type=="credit"){
+                income=Number(len[a].transaction[b].amount)+income;
+            }
+        }
+     var inc=document.querySelector("#income p");
+     inc.textContent="Rs "+income;
+    }
 
-//     }
+}
+for(var a=0;a<len.length;a++){
+   
+    if(len[a].email==localStorage.active){
+      
 
-// }
+        for(var b=0;b<len[a].transaction.length;b++){
+            if(len[a].transaction[b].type=="debit"){
+                expense=Number(len[a].transaction[b].amount)+expense;
+            }
+        }
+     var inc=document.querySelector("#expense p");
+     inc.textContent="Rs "+expense;
+    }
+
+}
+var balance=income-expense;
+var bal=document.querySelector("#balance p");
+bal.textContent="Rs "+balance;
 
 for(var k=0;k<len.length;k++){
 if(len[k].email==localStorage.active){
