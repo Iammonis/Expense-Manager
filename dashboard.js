@@ -13,5 +13,5 @@ function clear(){
 }
 function transinput(){
     var modal=document.getElementById("modal");
-    modal.Style.display="block";
+    modal.style.display="block";
 }
