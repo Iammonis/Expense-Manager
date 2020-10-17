@@ -116,6 +116,8 @@ html, body, #main{
 }
 #transaction{
     grid-area: trans;
+    display: flex;
+    flex-direction: column;
 }
 
 #income ,#expense ,#balance ,#transaction {
@@ -133,7 +135,31 @@ html, body, #main{
     font-weight: 600;
 }
 
+table{
+    border: none;
+    border-collapse: collapse;
+}
+
+table td{
+    width: 25%;
+    height: 60px;
+}
+
+thead{
+    color: white;
+    background: linear-gradient(to right, #4568dc, #b06ab3);;
+}
+
+thead td{
+    font-size: 20px;
+    font-weight: 600;
+}
+
 div h1{
     margin-top: 20px;
+}
+
+#transaction h1{
+    margin: 20px 0;
 }
 
