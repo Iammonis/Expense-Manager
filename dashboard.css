@@ -32,6 +32,14 @@ html, body, #main{
     align-items: center;    
 }
 
+#nav-wrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 
 #welcome-part ~ p{
@@ -60,15 +68,11 @@ html, body, #main{
     border: none;
 }
 
-#add-trans{
+#add-trans, #ledger, #log-out{
     background-color: var(--blue);
 }
 
-#log-out{
-    background-color: var(--blue);
-}
-
-#add-trans:hover, #log-out:hover{
+#add-trans:hover, #log-out:hover, #ledger:hover{
     background-color: var(--pink);
 }
 
@@ -83,7 +87,8 @@ html, body, #main{
 }
 
 #c-wrapper{
-    width: 80%;
+    width: 100%;
+    max-width: 1024px;
     height: 80%;
     position: absolute;
     transform: translate(-50%,-50%);
