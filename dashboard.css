@@ -60,7 +60,7 @@ html, body, #main{
     border: none;
 }
 
-#ledger{
+#add-trans{
     background-color: var(--blue);
 }
 
@@ -68,7 +68,7 @@ html, body, #main{
     background-color: var(--blue);
 }
 
-#ledger:hover, #log-out:hover{
+#add-trans:hover, #log-out:hover{
     background-color: var(--pink);
 }
 
@@ -79,6 +79,7 @@ html, body, #main{
 #content{
     width: 100%;
     height: 90%;
+    display: grid;
+    
 }
-
 
