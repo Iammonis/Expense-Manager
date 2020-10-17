@@ -71,8 +71,8 @@ for(var m=0;m<5;m++){
    }
 }
 function closetr(){
-    var closemod=document.getElementById("close-modal");
-    closemod.style.display="none"
+    var modal=document.getElementById("modal");
+    modal.style.display="none";
 }
 });
 function clear(){
@@ -99,5 +99,6 @@ function gettransaction(){
           console.log(len[i].transaction);
         }
     }
-    
+    var modal=document.getElementById("modal");
+    modal.style.display="none";
 }
