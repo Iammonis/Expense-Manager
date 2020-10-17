@@ -57,7 +57,7 @@ function register(){
   var email=form.get("r-email");
   var password=form.get("r-password");
 
-  var data={name:name,email:email,password:password};
+  var data={name:name,email:email,password:password,transaction:[]};
   var para = document.querySelector("#accExist")
 
   if(localStorage.user){
