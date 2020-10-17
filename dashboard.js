@@ -65,8 +65,8 @@ for(var m=0;m<5;m++){
         var timestamp=document.createElement("td");
         timestamp.textContent=len[k].transaction[m].timestamp;
     
-        tr.append(title,type,amount,timestamp);
-        table.append(tr);
+        tr.prepend(title,type,amount,timestamp);
+        table.prepend(tr);
           }
    
        }  
@@ -103,12 +103,16 @@ function gettransaction(){
     var title=modal.get("title");
     var type=modal.get("type");
     var amount =modal.get("amount");
+    var date =Date();
+    date = date.split("GMT")
+    date = date[0]
+    console.log(date)
     for(var i=0;i<len.length;i++){
         if(len[i].email==localStorage.active){    
     
-          len[i].transaction.push({title:title,type:type,amount:amount,timestamp:Date()});
+          len[i].transaction.push({title:title,type:type,amount:amount,timestamp:date});
           localStorage.setItem("user",JSON.stringify(len));
-          console.log(len[i].transaction);
+
         }
     }
     var modal=document.getElementById("modal");
