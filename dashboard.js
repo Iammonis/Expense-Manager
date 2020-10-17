@@ -6,7 +6,8 @@ var logout=document.getElementById("log-out");
 logout.addEventListener("click",clear);
 var add=document.getElementById("add-trans");
 add.addEventListener("click",transinput);
-
+var closemod=document.getElementById("close-modal");
+closemod.addEventListener("click",closetr);
 var len=JSON.parse(localStorage.user);
 var income=0;
 var expense=0;
@@ -64,12 +65,15 @@ for(var m=0;m<5;m++){
     
         tr.append(title,type,amount,timestamp);
         table.append(tr);
-    }
+          }
    
-}  
+       }  
+   }
 }
+function closetr(){
+    var closemod=document.getElementById("close-modal");
+    closemod.style.display="none"
 }
-
 });
 function clear(){
     localStorage.setItem("active","");
