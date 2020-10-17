@@ -8,6 +8,8 @@ var add=document.getElementById("add-trans");
 add.addEventListener("click",transinput);
 var closemod=document.getElementById("close-modal");
 closemod.addEventListener("click",closetr);
+var ledger=document.getElementById("ledger");
+ledger.addEventListener("click",ledge);
 var len=JSON.parse(localStorage.user);
 var income=0;
 var expense=0;
@@ -69,6 +71,16 @@ for(var m=0;m<5;m++){
    
        }  
    }
+}
+function ledge(){
+    var len=JSON.parse(localStorage.user);
+    for(var ld=0;ld<len.length;ld++){
+        if(len[ld].email==localStorage.active){
+        for(var ch=0;ch<len[ld].transaction.length;ch++){
+            console.log(len[ld].transaction[ch]);
+         }
+       }
+    }
 }
 function closetr(){
     var modal=document.getElementById("modal");
