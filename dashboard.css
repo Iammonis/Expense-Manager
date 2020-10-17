@@ -143,22 +143,22 @@ html, body, #main{
     font-weight: 600;
 }
 
-table{
+#transaction table{
     border: none;
     border-collapse: collapse;
 }
 
-table td{
+#transaction table td{
     width: 25%;
-    height: 60px;
+    height: 50px;
 }
 
-thead{
+#transaction thead{
     color: white;
     background: linear-gradient(to right, #4568dc, #b06ab3);;
 }
 
-thead td{
+#transaction thead td{
     font-size: 20px;
     font-weight: 600;
 }
@@ -208,7 +208,6 @@ form input[type="text"], input[type="submit"]{
 
 input[type="text"]{
     border-bottom: 1px solid var(--blue);
-    
 }
 
 label{
@@ -217,4 +216,45 @@ label{
 
 input[type="submit"]{
     background: var(--blue);
+}
+
+#modal-content2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    min-width: 60%;
+    max-height: 600%;
+    min-height: 60%;
+    border-radius: 20px;
+}
+
+#close-modal2{
+    position: absolute;
+    top: 5px;
+    right:10px;
+    cursor: pointer;
+}
+
+#modal2{
+    display: block;
+    position: fixed;
+    /* overflow: auto; */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#modal-content2 button{
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 50px;
 }
