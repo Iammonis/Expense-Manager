@@ -11,7 +11,6 @@ closemod.addEventListener("click",closetr);
 var ledger=document.getElementById("ledger");
 ledger.addEventListener("click",ledge);
 var username=document.getElementById("user-name");
-var date=document.getElementById("date");
 var len=JSON.parse(localStorage.user);
 var income=0;
 var expense=0;
@@ -81,6 +80,8 @@ for(var m=0;m<5;m++){
 }
 function ledge(){
     var len=JSON.parse(localStorage.user);
+    var modal2=document.getElementById("modal2");
+    modal2.style.display="block";
     for(var ld=0;ld<len.length;ld++){
         if(len[ld].email==localStorage.active){
         for(var ch=0;ch<len[ld].transaction.length;ch++){
@@ -88,6 +89,12 @@ function ledge(){
          }
        }
     }
+   var closemodal2=document.getElementById("close-modal2");
+   closemodal2.addEventListener("click",closeledger);
+}
+function closeledger(){
+    var modal2=document.getElementById("modal2");
+    modal2.style.display="none";
 }
 function closetr(){
     var modal=document.getElementById("modal");

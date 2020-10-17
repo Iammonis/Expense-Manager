@@ -1,260 +1,270 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --pink: #b06ab3;
-    --blue: #4568dc;
-    --active: rgba(176,106,179,0.4322002282303371) 19%;
-    --not-active: rgba(0,0,0,0.1681552844101124) 19%; 
+  --pink: #b06ab3;
+  --blue: #4568dc;
+  --active: rgba(176, 106, 179, 0.4322002282303371) 19%;
+  --not-active: rgba(0, 0, 0, 0.1681552844101124) 19%;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
-html, body, #main{
-    width: 100%;
-    height:100%;
+html,
+body,
+#main {
+  width: 100%;
+  height: 100%;
 }
 
-#main{
-    background: -webkit-linear-gradient(to right, #4568dc, #b06ab3);
-    background: linear-gradient(to right, #4568dc, #b06ab3);
+#main {
+  background: -webkit-linear-gradient(to right, #4568dc, #b06ab3);
+  background: linear-gradient(to right, #4568dc, #b06ab3);
 }
 
-#nav{
-    width: 100%;
-    height: 10%;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;    
+#nav {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#nav-wrapper{
-    width: 100%;
-    max-width: 1024px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#nav-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
-#welcome-part ~ p{
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.5);
+#welcome-part ~ p {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-#nav b{
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 22px;
-    
+#nav b {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 22px;
 }
 
-#welcome-part{
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.5);
+#welcome-part {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-#nav button{
-    font-size: 16px;
-    padding: 10px 50px;
-    border-radius: 20px;
-    outline: none;
-    cursor: pointer;
-    color: aliceblue;
-    border: none;
+#nav button {
+  font-size: 16px;
+  padding: 10px 50px;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  color: aliceblue;
+  border: none;
 }
 
-#add-trans, #ledger, #log-out{
-    background-color: var(--blue);
+#add-trans,
+#ledger,
+#log-out {
+  background-color: var(--blue);
 }
 
-#add-trans:hover, #log-out:hover, #ledger:hover{
-    background-color: var(--pink);
+#add-trans:hover,
+#log-out:hover,
+#ledger:hover {
+  background-color: var(--pink);
 }
 
-#modal{
-    display: none;
-    position: fixed;
-    overflow: auto;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+#modal {
+  display: none;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
-#content{
-    width: 100%;
-    height: 90%;
-    position: relative;
+#content {
+  width: 100%;
+  height: 90%;
+  position: relative;
 }
 
-#c-wrapper{
-    width: 100%;
-    max-width: 1024px;
-    height: 80%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    display: grid;
-    grid-template-columns: .5fr 1.5fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: 
+#c-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  height: 80%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
     "inc trans"
     "exp trans"
     "bal trans";
-    gap: 20px 20px;
-    color: rgba(0, 0, 0, 0.5);
+  gap: 20px 20px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-#income{
-    grid-area: inc;
+#income {
+  grid-area: inc;
 }
-#expense{
-    grid-area: exp;
+#expense {
+  grid-area: exp;
 }
-#balance{
-    grid-area:  bal;
+#balance {
+  grid-area: bal;
 }
-#transaction{
-    grid-area: trans;
-    display: flex;
-    flex-direction: column;
-}
-
-#income ,#expense ,#balance ,#transaction {
-    background-color: #fff;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
+#transaction {
+  grid-area: trans;
+  display: flex;
+  flex-direction: column;
 }
 
-#income p, #expense p, #balance p, #transaction p{
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    font-weight: 600;
+#income,
+#expense,
+#balance,
+#transaction {
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
 }
 
-#transaction table{
-    border: none;
-    border-collapse: collapse;
+#income p,
+#expense p,
+#balance p,
+#transaction p {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-weight: 600;
 }
 
-#transaction table td{
-    width: 25%;
-    height: 50px;
+#transaction table {
+  border: none;
+  border-collapse: collapse;
 }
 
-#transaction thead{
-    color: white;
-    background: linear-gradient(to right, #4568dc, #b06ab3);;
+#transaction table td {
+  width: 25%;
+  height: 50px;
 }
 
-#transaction thead td{
-    font-size: 20px;
-    font-weight: 600;
+#transaction thead {
+  color: white;
+  background: linear-gradient(to right, #4568dc, #b06ab3);
 }
 
-div h1{
-    margin-top: 20px;
+#transaction thead td {
+  font-size: 20px;
+  font-weight: 600;
 }
 
-#transaction h1{
-    margin: 20px 0;
+div h1 {
+  margin-top: 20px;
 }
 
-#close-modal{
-    position: absolute;
-    top: 5px;
-    right:10px;
-    cursor: pointer;
+#transaction h1 {
+  margin: 20px 0;
 }
 
-#modal-content{
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    background-color: #fff;
-    width: 40%;
-    height: 60%;
-    border-radius: 20px;
+#close-modal {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
 }
 
-#modal-content form{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
+#modal-content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  width: 40%;
+  height: 60%;
+  border-radius: 20px;
 }
 
-form input[type="text"], input[type="submit"]{
-    margin: 0 0 20px 0;
-    width: 300px;
-    height: 50px;
-    border: none;
-    outline:none;
+#modal-content form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
-input[type="text"]{
-    border-bottom: 1px solid var(--blue);
+form input[type="text"],
+input[type="submit"] {
+  margin: 0 0 20px 0;
+  width: 300px;
+  height: 50px;
+  border: none;
+  outline: none;
 }
 
-label{
-    margin-top: 10px;
+input[type="text"] {
+  border-bottom: 1px solid var(--blue);
 }
 
-input[type="submit"]{
-    background: var(--blue);
+label {
+  margin-top: 10px;
 }
 
-#modal-content2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    background-color: #fff;
-    min-width: 60%;
-    max-height: 600%;
-    min-height: 60%;
-    border-radius: 20px;
+input[type="submit"] {
+  background: var(--blue);
 }
 
-#close-modal2{
-    position: absolute;
-    top: 5px;
-    right:10px;
-    cursor: pointer;
+#modal-content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  min-width: 60%;
+  max-height: 600%;
+  min-height: 60%;
+  border-radius: 20px;
 }
 
-#modal2{
-    display: block;
-    position: fixed;
-    /* overflow: auto; */
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+#close-modal2 {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
 }
 
-#modal-content2 button{
-    border: none;
-    outline: none;
-    width: 150px;
-    height: 50px;
+#modal2 {
+  display: none;
+  position: fixed;
+  /* overflow: auto; */
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+#modal-content2 button {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 50px;
 }
