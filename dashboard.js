@@ -10,9 +10,16 @@ var closemod=document.getElementById("close-modal");
 closemod.addEventListener("click",closetr);
 var ledger=document.getElementById("ledger");
 ledger.addEventListener("click",ledge);
+var username=document.getElementById("user-name");
+var date=document.getElementById("date");
 var len=JSON.parse(localStorage.user);
 var income=0;
 var expense=0;
+for(var ab=0;ab<len.length;ab++){
+    if(len[ab].email==localStorage.active){
+      username.textContent=len[ab].name;
+    }
+}
 for(var a=0;a<len.length;a++){
    
     if(len[a].email==localStorage.active){

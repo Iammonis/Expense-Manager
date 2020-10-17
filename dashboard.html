@@ -12,7 +12,7 @@
             <div id="nav-wrapper">
                 <div class="user-welcome">
                     <p id="welcome-part">Welcome back, <b id="user-name"></b></p>
-                    <p id="date"></p>
+                   
                 </div>
                 <button id="add-trans">
                     Add Transaction
@@ -75,19 +75,18 @@
     <div id="modal">
         <div id="modal-content">
             <form>
-                <label>Title</label>
-                <input type="text" name="title">
-                <label>Type:</label>
-                <input type="radio" name="type" value="credit">
-                <label for="credit">Credit</label>
-                <input type="radio" name="type" value="debit">
-                <label for="debit">Debit</label>
-                <label>amount</label>
-                <input type="text" name="amount">
+                <input type="text" name="title" placeholder="Title" required>
+                <div class="type">
+                    <input type="radio" name="type" value="credit" checked>
+                    <label for="credit">Credit</label>
+                    <input type="radio" name="type" value="debit">
+                    <label for="debit">Debit</label>
+                </div>
+                <input type="text" name="amount" placeholder="Amount" required>
                 <input type="submit">
             </form>  
             <div id="close-modal">
-                xxx
+                x
             </div>
         </div>  
     </div>
