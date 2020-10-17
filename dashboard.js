@@ -8,44 +8,46 @@ var add=document.getElementById("add-trans");
 add.addEventListener("click",transinput);
 
 var len=JSON.parse(localStorage.user);
-var income=0;
-for(var a=0;a<len.length;a++){
+// var income=0;
+// for(var a=0;a<len.length;a++){
    
-    if(len[a].email==localStorage.active){
+//     if(len[a].email==localStorage.active){
       
 
-        for(var b=0;b<len[a].length;b++){
-            console.log(len[a].transaction[b].type);
-        }
+//         for(var b=0;b<len[a].length;b++){
+//             console.log(len[a].transaction[b].type);
+//         }
 
-    }
+//     }
 
-}
+// }
 
 for(var k=0;k<len.length;k++){
 if(len[k].email==localStorage.active){
 var table=document.querySelector("tbody");
 for(var m=0;m<5;m++){
-    var tr=document.createElement("tr");
-    var title=document.createElement("td");
-    title.textContent=len[k].transaction[m].title;
-
-    var type=document.createElement("td");
-    type.textContent=len[k].transaction[m].type;
-
-    var amount=document.createElement("td");
-    amount.textContent=len[k].transaction[m].amount;
-
-    var timestamp=document.createElement("td");
-    timestamp.textContent=len[k].transaction[m].timestamp;
-
-    tr.append(title,type,amount,timestamp);
-    table.append(tr);
-}
+    if(len[k].transaction[m]){
+        var tr=document.createElement("tr");
+        var title=document.createElement("td");
+        title.textContent=len[k].transaction[m].title;
+    
+        var type=document.createElement("td");
+        type.textContent=len[k].transaction[m].type;
+    
+        var amount=document.createElement("td");
+        amount.textContent=len[k].transaction[m].amount;
+    
+        var timestamp=document.createElement("td");
+        timestamp.textContent=len[k].transaction[m].timestamp;
+    
+        tr.append(title,type,amount,timestamp);
+        table.append(tr);
+    }
    
+}  
 }
 }
-console.log(table);
+
 });
 function clear(){
     localStorage.setItem("active","");
