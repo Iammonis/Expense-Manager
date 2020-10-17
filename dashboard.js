@@ -10,6 +10,13 @@ var closemod=document.getElementById("close-modal");
 closemod.addEventListener("click",closetr);
 var ledger=document.getElementById("ledger");
 ledger.addEventListener("click",ledge);
+var cred = document.getElementById("credit-btn")
+var debt = document.getElementById("debit-btn")
+
+all.addEventListener('click', ledge)
+cred.addEventListener('click',creditLedge)
+debt.addEventListener('click',debitLedge)
+
 var username=document.getElementById("user-name");
 
 // var cred = document.getElementById("credit-btn")
@@ -90,9 +97,25 @@ function ledge(){
     var len=JSON.parse(localStorage.user);
     var modal2=document.getElementById("modal2");
     modal2.style.display="block";
+    var tbody2=document.getElementById("tbody2");
     for(var ld=0;ld<len.length;ld++){
         if(len[ld].email==localStorage.active){
         for(var ch=0;ch<len[ld].transaction.length;ch++){
+            var tr=document.createElement("tr");
+            var title=document.createElement("td");
+            title.textContent=len[ld].transaction[ch].title;
+
+            var type=document.createElement("td");
+            type.textContent=len[ld].transaction[ch].type;
+        
+            var amount=document.createElement("td");
+            amount.textContent=len[ld].transaction[ch].amount;
+        
+            var timestamp=document.createElement("td");
+            timestamp.textContent=len[ld].transaction[ch].timestamp;
+        
+            tr.prepend(title,type,amount,timestamp);
+            tbody2.prepend(tr);
             console.log(len[ld].transaction[ch]);
          }
        }
