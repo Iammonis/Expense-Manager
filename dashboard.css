@@ -16,6 +16,7 @@
 html, body, #main{
     width: 100%;
     height:100%;
+    overflow: none;
 }
 
 #main{
@@ -227,9 +228,9 @@ input[type="submit"]{
     top: 50%;
     left: 50%;
     background-color: #fff;
-    min-width: 60%;
+    min-width: 80%;
     max-height: 600%;
-    min-height: 60%;
+    min-height: 100%;
     border-radius: 20px;
 }
 
@@ -257,4 +258,28 @@ input[type="submit"]{
     outline: none;
     width: 150px;
     height: 50px;
+    background: var(--blue);
+    color: white;
+    cursor: pointer;
+}
+
+#modal-content2 table{
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+#modal-content2 table td{
+    width: 25%;
+    height: 50px;
+}
+
+#modal-content2 thead{
+    color: white;
+    background: linear-gradient(to right, #4568dc, #b06ab3);;
+}
+
+#modal-content2 thead td{
+    font-size: 20px;
+    font-weight: 600;
 }
