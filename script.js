@@ -26,7 +26,9 @@ function login(){
       {
         if(password == getData[i].password)
         {
-          location.assign("dashboard.html");
+        
+            localStorage.setItem("active",getData[i].email);
+            location.assign(`dashboard.html`);
         }
         else{
           wp.style.display="block";
