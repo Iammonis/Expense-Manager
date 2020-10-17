@@ -12,12 +12,12 @@ var ledger=document.getElementById("ledger");
 ledger.addEventListener("click",ledge);
 var username=document.getElementById("user-name");
 
-var cred = document.getElementById("credit-btn")
-var debt = document.getElementById("debit-btn")
+// var cred = document.getElementById("credit-btn")
+// var debt = document.getElementById("debit-btn")
 
 
-cred.addEventListener('click',creditLedge)
-debt.addEventListener('click',debitLedge)
+// cred.addEventListener('click',creditLedge)
+// debt.addEventListener('click',debitLedge)
 
 var len=JSON.parse(localStorage.user);
 var income=0;
@@ -141,12 +141,12 @@ function gettransaction(){
     modal.style.display="none";
 }
 
-function creditLedge(){
-    for(let i=0; i<len.length;i++){
-        if()
-    }
-}
+// function creditLedge(){
+//     for(let i=0; i<len.length;i++){
+//         if()
+//     }
+// }
 
-function debitLedge(){
+// function debitLedge(){
 
-}
+// }
