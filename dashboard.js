@@ -4,8 +4,8 @@ location.assign("index.html");
 }
 var logout=document.getElementById("log-out");
 logout.addEventListener("click",clear);
-var modal=document.getElementById("modal");
-modal.addEventListener("click",transinput);
+var add=document.getElementById("add-trans");
+add.addEventListener("click",transinput);
 });
 function clear(){
     localStorage.setItem("active","");
